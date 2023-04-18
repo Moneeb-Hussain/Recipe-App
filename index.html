@@ -11,16 +11,25 @@
 
 <body>
     <div class="container">
-        <h1> My Kitchen </h1>
-        <div class="MainSearch">
-            <input type="text" placeholder="What you want to make?" id="SearchBar">
-            <button type="submit" id="SearchButton">Search</button>
+        <div class="Nav">
+            <div class="head">
+                <h1> Recipe Runway </h1>
+                <h3> Cook with Creativity </h3>
+            </div>
+            <div class="MainSearch">
+                <input type="text" placeholder="What you want to make?" id="SearchBar">
+                <button type="submit" id="SearchButton">Search</button>
+                <button type="submit" id="BackButton" class="hidden">Back</button>
+            </div>
         </div>
-        <div id="RecipeCards" class="cards"></div>
+        <div id="RecipeCards" class="cards"> </div>
         <div id="SearchCards" class="cards"></div>
+        <div id="NewCard" class="cards"></div>
+        <Footer>
+            <p> Copyright </p>
+            <p>2023- New Vision Recipe Runway</p>
+        </Footer>
     </div>
-
-
     <script src="index.js"></script>
 </body>
 
