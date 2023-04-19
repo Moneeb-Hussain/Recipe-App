@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title> Food Recipe App </title>
 </head>
 
 <body>
     <div class="container">
-        <div class="Nav">
-            <div class="head">
-                <h1> Recipe Runway </h1>
-                <h3> Cook with Creativity </h3>
+        <div class="mainHeader">
+            <div class="Heading">
+                <h1 class="Title"> Recipe Runway </h1>
+                <h3 class="subTitle"> Cook with Creativity </h3>
             </div>
             <div class="MainSearch">
                 <input type="text" placeholder="What you want to make?" id="SearchBar">
@@ -22,9 +22,9 @@
                 <button type="submit" id="BackButton" class="hidden">Back</button>
             </div>
         </div>
+        <h1 class="hidden FeaturedItem" id="FeaturedItems"> Featured Items </h1>
         <div id="RecipeCards" class="cards"> </div>
-        <div id="SearchCards" class="cards"></div>
-        <div id="NewCard" class="cards"></div>
+        <div id="instructionCard" class="cards"></div>
         <Footer>
             <p> Copyright </p>
             <p>2023- New Vision Recipe Runway</p>

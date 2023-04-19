@@ -10,7 +10,7 @@
     background-color: rgb(7, 7, 7);
 }
 
-.Nav {
+.mainHeader {
     font-family: sans-serif;
     line-height: 42px;
     display: flex;
@@ -33,6 +33,7 @@ input {
 .p {
     padding: auto;
     margin: auto;
+    text-align: center;
 }
 
 input[type="text"] {
@@ -42,9 +43,10 @@ input[type="text"] {
     border-radius: 5px;
     padding: 10px;
     color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.head {
+.Heading {
     display: flex;
     flex-direction: column;
 }
@@ -59,6 +61,18 @@ h3 {
     text-align: center;
 }
 
+.subTitle {
+    padding: 10px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.Title {
+    font-size: 40px;
+    padding: 19px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 button {
     padding: 10px 20px;
     color: white;
@@ -67,6 +81,8 @@ button {
     font-size: 16px;
     margin-left: 10px;
     background-color: #4CAF50;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 
 ul {
@@ -89,40 +105,77 @@ li {
     font-size: 16px;
 }
 
-li::first-letter {
+ul li {
     text-transform: capitalize;
+}
+
+ul li:first-letter {
+    text-transform: uppercase;
+}
+
+ul li:not(:last-child)::after {
+    content: ",";
+    margin-right: 2px;
 }
 
 .cards {
     display: flex;
     flex-direction: row;
+    text-align: justify;
     justify-content: space-around;
     flex-wrap: wrap;
     background-color: rgb(7, 7, 7);
-    /* background-color: rgb(23, 23, 23); */
 
 }
 
 .Card {
+    display: flex;
+    flex-direction: column;
     margin-top: 20px;
     padding: 1rem;
     flex-basis: 25%;
     text-align: center;
+    flex-wrap: wrap;
     background: rgba(162, 184, 193, 0.05);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.mainbutton {
+    flex-grow: 1;
+}
+
+.Card p {
+    text-align: center;
+    margin: auto;
+}
+
+.Card p h4 h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .CardNew {
     margin-top: 20px;
     padding: 1rem;
-    flex-basis: 50%;
+    flex-basis: 55%;
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex-wrap: wrap;
     background-color: rgb(23, 23, 23);
     color: antiquewhite;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     background: rgba(162, 184, 193, 0.05);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.FeaturedItem {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: rgb(226, 106, 7);
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 h4 {
@@ -150,6 +203,12 @@ img {
     display: none;
 }
 
+.Cards-btn {
+    align-self: center;
+    margin: 12px 0px;
+    background-color: #e7460b;
+}
+
 Footer {
     width: 100%;
     background-color: rgba(0, 28, 39, 0.75);
@@ -158,6 +217,88 @@ Footer {
     height: 62px;
     align-items: center;
     display: flex;
-    /* gap: 300px; */
     justify-content: space-around;
+}
+
+@media only screen and (max-width: 680px) {
+    .Card {
+        flex-basis: 50%;
+    }
+
+}
+
+@media only screen and (max-width: 470px) {
+    .Card {
+        flex-basis: 70%;
+    }
+
+    .subTitle {
+        padding: 10px;
+        font-size: 15px;
+        text-align: center;
+        display: none;
+    }
+
+    .Title {
+        font-size: 36px;
+        padding: 19px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    input[type="text"] {
+        font-size: 14px;
+        padding: 5px;
+
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 370px) {
+    input[type="text"] {
+        font-size: 13px;
+        padding: 2px;
+        text-align: center;
+
+    }
+
+    button {
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+
+    .Cards-btn {
+        padding: 10px 20px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .mainHeader {
+        flex-direction: column;
+    }
+
+    .Title {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .subTitle {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 680px) and (max-width:990px) {
+    .Card {
+        flex-basis: 37%;
+    }
+}
+
+@media only screen and (max-width:990px) {
+    .CardNew {
+        flex-basis: 80%
+    }
 }
