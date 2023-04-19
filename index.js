@@ -38,15 +38,15 @@ else {
 
     })
 }
-
+let check = 0;
 let searchedValue = document.getElementById("SearchBar");
 let Searchbtn = document.getElementById("SearchButton");
 Searchbtn.addEventListener("click", search);
 function search() {
     let EnteredValue = searchedValue.value.toLowerCase();
-    document.getElementById("FeaturedItems").style.display = "none";
     if (EnteredValue != "") {
         instructionCard.innerHTML = "";
+        document.getElementById("FeaturedItems").style.display = "none";
         document.getElementById("BackButton").style.display = "none";
         document.getElementById("RecipeCards").innerHTML = "";
         document.getElementById("RecipeCards").style.display = "flex";
@@ -99,8 +99,10 @@ function search() {
                 })
             })
         }
+        check++;
     }
 }
+
 function addCards(element) {
     let mainrecipeCards = document.getElementById("RecipeCards")
     let Cards = document.createElement("div")
@@ -110,12 +112,14 @@ function addCards(element) {
     Cards.setAttribute("value", `${element.id}`)
     return Cards
 }
+
 function addIngredients(element, mainCards, Ingredientslist) {
     const ingredientsItem = document.createElement("li")
     ingredientsItem.innerText = element.name;
     Ingredientslist.appendChild(ingredientsItem)
     mainCards.appendChild(Ingredientslist)
 }
+
 function addButton(mainCards) {
     let mainButton = document.createElement("div")
     mainButton.classList.add("mainbutton")
@@ -144,10 +148,16 @@ function showRecipe(event) {
                 instructionCard.innerHTML = "";
                 document.getElementById("RecipeCards").style.display = "flex";
                 document.getElementById("BackButton").style.display = "none"
+                if (check == 0) {
+                    document.getElementById("FeaturedItems").style.display = "flex";
+                }
             })
         })
-        .catch(error => console.log(error));
+        .catch(error => {
+            console.log(error)
+        });
 }
+
 function createRecipe(data) {
     document.getElementById("FeaturedItems").style.display = "none";
     let mainRecipe = document.getElementById("instructionCard")
