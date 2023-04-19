@@ -1,5 +1,5 @@
 const apiKey = "86eea5a475df44aaa8c47f654c426751";
-//Featured Cards
+
 let storedData = JSON.parse(localStorage.getItem("FeaturedRecipes"));
 if (storedData) {
     document.getElementById("FeaturedItems").style.display = "flex";
@@ -38,7 +38,7 @@ else {
 
     })
 }
-// Searched Recipe Cards
+
 let searchedValue = document.getElementById("SearchBar");
 let Searchbtn = document.getElementById("SearchButton");
 Searchbtn.addEventListener("click", search);
